@@ -43,7 +43,7 @@ namespace MyTodoList.Controllers
                 _context.Add(item);
                 await _context.SaveChangesAsync();
 
-                TempData["Success"] = "The item has Been added!";
+                TempData["save"] = "The item has Been added!";
                 return RedirectToAction("Index");
             }
             return View(item);
@@ -70,7 +70,7 @@ namespace MyTodoList.Controllers
                 _context.Update(item);
                 await _context.SaveChangesAsync();
 
-                TempData["Success"] = "The item has been updated!";
+                TempData["edit"] = "The item has been updated!";
 
                 return RedirectToAction("Index");
             }
@@ -89,7 +89,7 @@ namespace MyTodoList.Controllers
                 _context.TodoLists.Remove(item);
                 await _context.SaveChangesAsync();
 
-                TempData["Success"] = "The item has been deleted!";
+                TempData["delete"] = "The item has been deleted!";
             }
             return RedirectToAction("Index");
         }
